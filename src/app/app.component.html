@@ -1,7 +1,13 @@
 <h1>{{title}}</h1>
-<h2>{{hero.name}} details!</h2>
-<div><label>id: </label>{{hero.id}}</div>
-<div>
-  <label>name: </label>{{hero.name}}
-  <input [(ngModel)]="hero.name" placeholder="name">
-</div>
+<h2>By {{hero.name}}</h2>
+<p>Heroes:</p>
+    <ul>
+      <li>
+        <span><b>ID</b></span>
+        <span><b>Name</b></span>
+      </li>
+      <li *ngFor="let hero of heroes">
+        <span>{{ hero.id }}</span>
+        <span>{{ hero.name }}</span>
+      </li>
+    </ul>

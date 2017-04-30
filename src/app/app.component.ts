@@ -8,6 +8,7 @@ export class Hero {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  //template: `<ul><li *ngFor="let hero of heroes">{{ hero.id }}</li></ul>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -15,8 +16,12 @@ export class AppComponent {
   hero : Hero = {
           id: 1,
           name: 'Ayan'
-        };
-  const HEROES: Hero[] = [
+        }; 
+
+heroes = HEROES;
+}
+
+const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
@@ -28,4 +33,4 @@ export class AppComponent {
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
-}
+
