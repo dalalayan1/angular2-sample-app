@@ -1,8 +1,30 @@
-ul {
-    list-style: none;
-    border: 1px solid blue;
+* {
+    font-family: sans-serif;
 }
-span{
-    padding: 5px 0 0 5px;
-    width: 50%;
+ul.heroes {
+    list-style: none;
+    width: 30%;
+    padding: 0;
+}
+ul.heroes > li:first-child{
+    background: lightseagreen;
+}
+ul.heroes > li {
+    border: 1px solid lightseagreen;
+    cursor: pointer;
+}
+ul.heroes > li:not(:first-child):hover, .selected {
+    background: lightcyan;
+    color: lightseagreen;
+}
+ul.heroes > li > span{
+    display: inline-block;
+    padding: 20px 0 0 10px;
+    height: 40px;
+}
+ul.heroes > li > span:first-child {
+    width: 30%;
+}
+child-div {
+    float: right;
 }

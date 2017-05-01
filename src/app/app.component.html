@@ -1,13 +1,15 @@
 <h1>{{title}}</h1>
-<h2>By {{hero.name}}</h2>
+<child-div [hero]="selectedHero"></child-div>
 <p>Heroes:</p>
-    <ul>
+    <ul class="heroes">
       <li>
         <span><b>ID</b></span>
-        <span><b>Name</b></span>
+        <span><b>NAME</b></span>
       </li>
-      <li *ngFor="let hero of heroes">
+      <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
         <span>{{ hero.id }}</span>
-        <span>{{ hero.name }}</span>
+        <span>{{ hero.name | uppercase }}</span>
       </li>
     </ul>
+
+  

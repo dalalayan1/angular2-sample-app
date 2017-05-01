@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
-
-export class Hero {
-  id: number;
-  name: string;
-}
+import { Hero } from './hero';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  //template: `<ul><li *ngFor="let hero of heroes">{{ hero.id }}</li></ul>`,
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Tour of my app!';
+
   hero : Hero = {
           id: 1,
           name: 'Ayan'
         }; 
+  heroes = HEROES;
 
-heroes = HEROES;
+  selectedHero : Hero;
+
+  onSelect(params: Hero): void {
+    this.selectedHero = params;
+    console.log('id , name -> ',params.id,params.name);
+  }
+
+
 }
 
 const HEROES: Hero[] = [
