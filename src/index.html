@@ -11,4 +11,26 @@
 <body>
   <app-root>Loading...</app-root>
 </body>
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    name: "angular2 app",
+    apiKey: "AIzaSyAQ1V1mKfF5QcDsE_OBmWuh1hak0OaA448",
+    authDomain: "angular2-sample-app.firebaseapp.com",
+    databaseURL: "https://angular2-sample-app.firebaseio.com",
+    projectId: "angular2-sample-app",
+    storageBucket: "angular2-sample-app.appspot.com",
+    messagingSenderId: "424989887238"
+  };
+  var app = firebase.initializeApp(config);
+  var database = firebase.database();
+  //function writeUserData(userId, name, email, imageUrl) {
+    firebase.database().ref('/').set({
+      name: "ayasfan",
+      value: 232323
+    });
+  //}
+  console.log(database);
+</script>
 </html>
